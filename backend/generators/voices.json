@@ -1,0 +1,52 @@
+[
+  {
+    "voice": {
+      "voice_id": "MF3mGyEYCl7XYWbV9V6O",
+      "name": "Elli",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity": 0.75
+      }
+    }
+  },
+  {
+    "voice": {
+      "voice_id": "pNInz6obpgDQGcFmaJgB",
+      "name": "Adam",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity": 0.75
+      }
+    }
+  },
+  {
+    "voice": {
+      "voice_id": "alOBSK0S6AYYJRWo3uNx",
+      "name": "Bruce",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity": 0.75
+      }
+    }
+  },
+  {
+    "voice": {
+      "voice_id": "BqeEDmPKjDzkVByGg3yw",
+      "name": "IndianMan",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity": 0.75
+      }
+    }
+  },
+  {
+    "voice": {
+      "voice_id": "60B5Iw4znGSu7WpY9zeM",
+      "name": "Myra",
+      "voice_settings": {
+        "stability": 0.75,
+        "similarity": 0.75
+      }
+    }
+  }
+]

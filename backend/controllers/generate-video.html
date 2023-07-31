@@ -1,0 +1,626 @@
+<main>
+  <div class="container mt-3 my-3">
+    <h1 class="display-3" style="text-align: center">
+      <span class="background-text">Video</span> generator
+    </h1>
+    <div class="row justify-content-center mx-0 pt-2">
+      <div id="input1" class="col-sm-12 col-md-12 col-lg-7 col-lx-7">
+        <div>
+          <div class="container px-0">
+            <div
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseExample"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+              class="py-3 px-1"
+              style="font-size: 1.1rem"
+            >
+              <span class="circle">1</span> Use GPT to write perfect content
+            </div>
+            <div
+              class="row justify-content-center align-items-end collapse"
+              id="collapseExample"
+            >
+              <div class="col-11 col-md-10">
+                <p class="form-label pt-3">
+                  Describe topic in one-two sentences or try with our
+                  <span style="cursor: pointer" onclick="suggestText()"
+                    ><span style="color: #74b9ff"
+                      >suggestion
+                      <img
+                        src="images/magic-wand-svgrepo-com-74b9ff-w-55.svg"
+                        alt="use wand"
+                        width="22px" /></span
+                  ></span>
+                </p>
+                <input
+                  type="topic"
+                  id="topic"
+                  name="topic"
+                  class="topic-input"
+                  placeholder="Eg. How gold was formed on our planet?"
+                />
+              </div>
+              <div class="col-11 col-md-10 mt-3">
+                <span
+                  type="submit"
+                  class="btn btn-block"
+                  id="btn-get-text-disabled"
+                  >GENERATE TEXT</span
+                >
+              </div>
+              <div class="row justify-content-center align-self-center pt-3">
+                <div class="col-11 col-md-10" style="position: relative">
+                  <p class="mb-0">Or just paste your desired text</p>
+                  <textarea
+                    class="form-control topic-output"
+                    rows="6"
+                    id="topic-result"
+                    maxlength="1100"
+                  ></textarea>
+                  <div
+                    id="loader"
+                    style="display: none; position: absolute; top: 0; left: 40%"
+                    class="animate-bottom"
+                  >
+                    <div class="lds-ellipsis">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row justify-content-center align-self-center pt-3">
+                <div
+                  id="keywords-list"
+                  class="col-11 col-md-10"
+                  style="display: none"
+                >
+                  <label>Generated keywords based on text above</label>
+                  <p id="keywords-paragraph"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="input1" class="col-sm-12 col-md-12 col-lg-7 col-lx-7 my-3">
+        <div
+          data-bs-toggle="collapse"
+          data-bs-target="#collapse2"
+          aria-expanded="false"
+          aria-controls="collapse2"
+          class="py-3 px-1"
+          style="font-size: 1.1rem"
+        >
+          <span class="circle">2</span> Generate images for video
+        </div>
+        <div>
+          <div class="collapse" id="collapse2">
+            <div class="row justify-content-center my-2">
+              <div class="col-11 col-sm-10">
+                <p class="mb-0">Select image format</p>
+              </div>
+            </div>
+            <div class="container">
+              <div class="row justify-content-between my-2">
+                <div class="col-2 pt-3" onclick="addFocus(this, '4:3')">
+                  <div class="d-flex flex-column align-items-center">
+                    <div
+                      style="
+                        height: 30px;
+                        width: 40px;
+                        background-color: #bcbbc2;
+                        border-radius: 2px;
+                      "
+                    ></div>
+                    <p class="mb-0">4:3</p>
+                  </div>
+                </div>
+                <div class="col-2 pt-3" onclick="addFocus(this, '1:1')">
+                  <div class="d-flex flex-column align-items-center">
+                    <div
+                      style="
+                        height: 30px;
+                        width: 30px;
+                        background-color: #bcbbc2;
+                        border-radius: 2px;
+                      "
+                    ></div>
+                    <p class="mb-0">1:1</p>
+                  </div>
+                </div>
+                <div class="col-2 pt-3" onclick="addFocus(this, '4:5')">
+                  <div class="d-flex flex-column align-items-center">
+                    <div
+                      style="
+                        height: 35px;
+                        width: 28px;
+                        background-color: #bcbbc2;
+                        border-radius: 2px;
+                      "
+                    ></div>
+                    <p class="mb-0">4:5</p>
+                  </div>
+                </div>
+                <div class="col-2 pt-3" onclick="addFocus(this, '2:3')">
+                  <div class="d-flex flex-column align-items-center">
+                    <div
+                      style="
+                        height: 41px;
+                        width: 27px;
+                        background-color: #bcbbc2;
+                        border-radius: 2px;
+                      "
+                    ></div>
+                    <p class="mb-0">2:3</p>
+                  </div>
+                </div>
+                <div class="col-2 pt-3" onclick="addFocus(this, '4:7')">
+                  <div class="d-flex flex-column align-items-center">
+                    <div
+                      style="
+                        height: 48px;
+                        width: 27px;
+                        background-color: #bcbbc2;
+                        border-radius: 2px;
+                      "
+                    ></div>
+                    <p class="mb-0">4:7</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row" style="min-height: 250px">
+              <div class="col-6">
+                <div class="row">
+                  <div class="col-12 col-sm-10 ms-md-auto text-sm-start">
+                    <div class="d-flex flex-column">
+                      <p class="mb-1" style="padding-left: 12px">
+                        Images style
+                      </p>
+                      <ul class="list-unstyled mb-1">
+                        <li>
+                          <span
+                            data-group="imagesGroup1"
+                            class="btn btn-image1 pt-0 pb-0"
+                            onclick="previewImage1('a')"
+                            >Enhance</span
+                          >
+                        </li>
+                        <li>
+                          <span
+                            data-group="imagesGroup1"
+                            class="btn btn-image1 pt-0 pb-0"
+                            onclick="previewImage1('b')"
+                            >Comic Book</span
+                          >
+                        </li>
+                        <li>
+                          <span
+                            data-group="imagesGroup1"
+                            class="btn btn-image1 pt-0 pb-0"
+                            onclick="previewImage1('c')"
+                            >Cinematic</span
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12 col-sm-10 ms-md-auto text-sm-start">
+                    <div class="d-flex flex-column">
+                      <p class="mb-1" style="padding-left: 12px">
+                        Images promt
+                      </p>
+                      <ul class="list-unstyled mb-1">
+                        <li>
+                          <span
+                            data-group="imagesGroup2"
+                            class="btn btn-image2 pt-0 pb-0"
+                            onclick="previewImage2('1')"
+                            >Original</span
+                          >
+                        </li>
+                        <li>
+                          <span
+                            data-group="imagesGroup2"
+                            class="btn btn-image2 pt-0 pb-0"
+                            onclick="previewImage2('2')"
+                            >Grand Hotel</span
+                          >
+                        </li>
+                        <li>
+                          <span
+                            data-group="imagesGroup2"
+                            class="btn btn-image2 pt-0 pb-0"
+                            onclick="previewImage2('3')"
+                            >Studio Ghibli</span
+                          >
+                        </li>
+                        <li>
+                          <span
+                            data-group="imagesGroup2"
+                            class="btn btn-image2 pt-0 pb-0"
+                            onclick="previewImage2('4')"
+                            >Synth Wave</span
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-5" style="max-width: 250px">
+                <p class="mb-0">Example</p>
+                <div id="previewImagePlaceholder"></div>
+              </div>
+            </div>
+            <div class="row justify-content-center align-self-center">
+              <div
+                id="images-text"
+                class="col-11 col-md-10"
+                style="display: block"
+              >
+                <span
+                  class="btn btn-block mt-2 mb-3"
+                  id="btn-get-images-disabled"
+                  >GENERATE IMAGES</span
+                >
+                <div id="images"></div>
+                <div
+                  id="loader2"
+                  style="
+                    height: 100px;
+                    display: none;
+                    margin: auto;
+                    width: 80px;
+                  "
+                  class="animate-bottom"
+                >
+                  <div class="lds-ellipsis">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div
+              class="row justify-content-center align-self-center generated-images"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div id="input1" class="col-sm-12 col-md-12 col-lg-7 col-lx-7 mb-3">
+        <div>
+          <div>
+            <div
+              data-bs-toggle="collapse"
+              data-bs-target="#collapse3"
+              aria-expanded="false"
+              aria-controls="collapse3"
+              class="py-3 px-1"
+              style="font-size: 1.1rem"
+            >
+              <span class="circle">3</span>Choose voice-over style
+            </div>
+            <div
+              class="row justify-content-center align-items-end collapse pb-2"
+              id="collapse3"
+            >
+              <div class="row justify-content-center">
+                <div class="row justify-content-around">
+                  <div class="col-3 col-md-3">
+                    <span
+                      data-group="group1"
+                      class="btn btn-audio"
+                      onclick="playAudio('Bruce')"
+                      >Bruce</span
+                    >
+                  </div>
+                  <div class="col-9 col-md-6">
+                    <div id="Bruce"></div>
+                  </div>
+                </div>
+                <div class="row justify-content-around">
+                  <div class="col-3 col-md-3">
+                    <span
+                      data-group="group1"
+                      class="btn btn-audio"
+                      onclick="playAudio('IndianMan')"
+                      >Tongva</span
+                    >
+                  </div>
+                  <div class="col-9 col-md-6">
+                    <div id="IndianMan"></div>
+                  </div>
+                </div>
+                <div class="row justify-content-around">
+                  <div class="col-3 col-md-3">
+                    <span
+                      data-group="group1"
+                      class="btn btn-audio"
+                      onclick="playAudio('Myra')"
+                      >Myra</span
+                    >
+                  </div>
+                  <div class="col-9 col-md-6">
+                    <div id="Myra"></div>
+                  </div>
+                </div>
+                <div class="row justify-content-around">
+                  <div class="col-3 col-md-3">
+                    <span
+                      data-group="group1"
+                      class="btn btn-audio"
+                      onclick="playAudio('Adam')"
+                      >Adam</span
+                    >
+                  </div>
+                  <div class="col-9 col-md-6">
+                    <div id="Adam"></div>
+                  </div>
+                </div>
+                <div class="row justify-content-around">
+                  <div class="col-3 col-md-3">
+                    <span
+                      data-group="group1"
+                      class="btn btn-audio"
+                      onclick="playAudio('Elli')"
+                      >Elli</span
+                    >
+                  </div>
+                  <div class="col-9 col-md-6">
+                    <div id="Elli"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="input1" class="col-sm-12 col-md-12 col-lg-7 col-lx-7 mb-3">
+        <div
+          data-bs-toggle="collapse"
+          data-bs-target="#collapse4"
+          aria-expanded="false"
+          aria-controls="collapse4"
+          class="py-3 px-1"
+          style="font-size: 1.1rem"
+        >
+          <span class="circle">4</span>Style video captions
+        </div>
+        <div class="row justify-content-center collapse" id="collapse4">
+          <div class="container px-1 pt-2">
+            <div class="row justify-content-around">
+              <div
+                class="col-7 col-md-7 col-lg-7"
+                style="overflow-y: auto; height: 170px"
+              >
+                <div class="row justify-content-around">
+                  <span
+                    class="btn btn-block mx-1 col-5 btn-gender"
+                    style="font-family: Arial; font-size: 1rem"
+                    onclick="addFocusFont(this, 'Arial')"
+                    >ARIAL</span
+                  >
+                  <span
+                    class="btn btn-block mx-1 col-5 btn-gender"
+                    style="font-family: Impact; font-size: 1rem"
+                    onclick="addFocusFont(this, 'Impact')"
+                    >IMPACT</span
+                  >
+                </div>
+                <hr />
+                <!-- <div
+                    class="row justify-content-center align-self-center pt-3"
+                  >
+                    <div class="col-11 col-md-10 px-0">
+                      <p>Choose caption color</p>
+                    </div>
+                  </div> -->
+                <div class="row justify-content-around">
+                  <div
+                    class="col-2 p-3"
+                    onclick="addFocusCaption(this, '&Hf5f5f5', '#f5f5f5')"
+                  >
+                    <div class="d-flex flex-column align-items-center">
+                      <div
+                        style="
+                          height: 20px;
+                          width: 20px;
+                          background-color: #f5f5f5;
+                          border-radius: 2px;
+                          border: solid 1px;
+                        "
+                      ></div>
+                    </div>
+                  </div>
+                  <div
+                    class="col-2 p-3"
+                    onclick="addFocusCaption(this, '&H03fcff', '#e8dc06')"
+                  >
+                    <div class="d-flex flex-column align-items-center">
+                      <div
+                        style="
+                          height: 20px;
+                          width: 20px;
+                          background-color: #e8dc06;
+                          border-radius: 2px;
+                          border: solid 1px;
+                        "
+                      ></div>
+                    </div>
+                  </div>
+                  <div
+                    class="col-2 p-3"
+                    onclick="addFocusCaption(this, '&H03f01f', '#42ec00')"
+                  >
+                    <div class="d-flex flex-column align-items-center">
+                      <div
+                        style="
+                          height: 20px;
+                          width: 20px;
+                          background-color: #42ec00;
+                          border-radius: 2px;
+                          border: solid 1px;
+                        "
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+                <div style="text-align: center">
+                  <ul class="list-unstyled mb-1">
+                    <li>
+                      <span
+                        data-group="imagesGroup2"
+                        class="btn btn-image2 pt-0 pb-0"
+                        onclick="captionTextPosition('6')"
+                        >Top</span
+                      >
+                    </li>
+                    <li>
+                      <span
+                        data-group="imagesGroup2"
+                        class="btn btn-image2 pt-0 pb-0"
+                        onclick="captionTextPosition('10')"
+                        >Middle</span
+                      >
+                    </li>
+                    <li>
+                      <span
+                        data-group="imagesGroup2"
+                        class="btn btn-image2 pt-0 pb-0"
+                        onclick="captionTextPosition('2')"
+                        >Bottom</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <hr />
+                <div>
+                  <input
+                    type="range"
+                    id="captionOverlay"
+                    class="form-range"
+                    value="25"
+                    min="0"
+                    max="75"
+                    step="25"
+                  />
+                  <div class="d-flex justify-content-between">
+                    <span>0</span>
+                    <span>25</span>
+                    <span>50</span>
+                    <span>75</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4 col-md-3 col-lg-3">
+                <div
+                  style="
+                    height: 150px;
+                    width: 100px;
+                    background-image: url('../assets/images/captionExample.jpg');
+                    border-radius: 2px;
+                    position: relative;
+                    text-align: center;
+                    color: white;
+                    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold',
+                      sans-serif;
+                  "
+                  id="captionExampleBox"
+                >
+                  <div
+                    id="captionOverlayOpacity"
+                    style="
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      height: 150px;
+                      width: 100px;
+                      background-color: #000000;
+                      opacity: 0.25;
+                    "
+                  ></div>
+                  <div
+                    style="
+                      position: absolute;
+                      top: 50%;
+                      left: 50%;
+                      transform: translate(-50%, -50%);
+                      text-shadow: 0 0 3px #000000, 0 0 5px #000000;
+                      font-size: 14px;
+                    "
+                    id="captionExampleText"
+                  >
+                    EXAMPLE
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center align-self-center pt-3 pb-3">
+            <div class="col-11 col-md-10 mt-3 mb-3">
+              <span class="btn btn-block" id="btn-get-video"
+                >GENERATE VIDEO</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="videoModal" class="modal">
+    <div class="modal-content">
+      <p>Your video is getting ready...</p>
+      <p>
+        <i>Once it is finished video will be sent on your email.</i>
+      </p>
+      <p>
+        Please be patiend and video will apear here. <br />
+        This action may take approximately 2 minutes. <br />
+        You can close this window or wait for video.
+      </p>
+      <div id="vertic" class="vertically">
+        <div class="inner">
+          <img
+            id="modal-image"
+            class="modal-imgage-class"
+            style="max-width: 100%; margin: auto"
+            src="./images/cwok_casual_27.png"
+            alt="home image"
+          />
+        </div>
+      </div>
+      <video
+        class="modal-video"
+        style="display: none"
+        id="videoPlayer"
+        controls
+      ></video>
+      <div
+        class="row justify-content-center pt-1"
+        style="display: none"
+        id="modal-btn"
+      >
+        <span class="close" id="modal-dismiss"> DISMISS &times; </span>
+        <span class="download-btn" id="modal-download"> &plus; DOWNLOAD </span>
+      </div>
+      <p>
+        Help us improve our product. Complete a short satisfaction
+        <a href="https://forms.gle/N8vZzVEPXLRSTm3C9" target="”_blank”"
+          >survey</a
+        >.
+      </p>
+    </div>
+  </div>
+</main>
