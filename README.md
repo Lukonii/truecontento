@@ -56,6 +56,8 @@ Site was hosted on google cloud - compute engine.
 
 ## Create DB script
 
+* DB shema https://drive.google.com/file/d/1HgsJaxNIN3KFqnJ2RjJItB6v5XvJ93vt/view?usp=sharing*
+
 in terminal psql
 sudo -u postgres psql
 
