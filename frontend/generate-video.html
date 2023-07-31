@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Generate Video" />
+    <meta
+      property="og:description"
+      content="Generate AI video in few simple clicks."
+    />
+    <meta property="og:image" content="./images/logo_512.jpg" />
+    <meta property="og:url" content="https://truecontento.com" />
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-generate-video.css" />
+    <link rel="stylesheet" href="css/loader.css" />
+    <link rel="icon" type="image/x-icon" href="/images/logo_48.png" />
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <title>TrueContento - Video Generator</title>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-RJJBWMBPE4"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-RJJBWMBPE4");
+    </script>
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <nav
+      class="navbar sticky-top navbar-expand-lg navbar-dark"
+      style="
+        background-color: #0061c2;
+        font-size: 1.2rem;
+        box-shadow: 0px 4px 30px #1b1b1b4b;
+      "
+      id="navbar"
+    >
+      <div class="container">
+        <a
+          class="navbar-brand"
+          style="font-weight: 600; letter-spacing: 2px"
+          href="/"
+          >TrueContento</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-between"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/pricing.html">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/referral.html">Referral</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main>
+      <h4 class="container mt-2" id="generate-message">
+        Checking if user is logged in.
+      </h4>
+    </main>
+    <footer class="footer mt-auto py-3 bg-secondary">
+      <div class="container">
+        <span class="text-light">Copyright &copy; 2023 TrueContento</span>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const token = localStorage.getItem("token");
+        if (!token) {
+          window.location.href = "/auth.html";
+          return;
+        }
+        // extend token
+
+        const loginType = localStorage.getItem("login-type");
+        const url = "/generate-video";
+        const options = {
+          method: "GET",
+          headers: {
+            Authorization: token,
+            "Login-Type": loginType,
+          },
+        };
+        fetch(url, options)
+          .then((response) => response.text())
+          .then((data) => {
+            // kada je html vraca gresku pri konvertovanju u json
+            if (data.length < 100) {
+              document.getElementById("generate-message").innerHTML =
+                JSON.parse(data).error;
+              return;
+            }
+            const mainElement = document.querySelector("main");
+            mainElement.innerHTML = data;
+            var script2 = document.createElement("script");
+            script2.src = "./apiCalls.js";
+            document.head.appendChild(script2);
+
+            var script3 = document.createElement("script");
+            script3.src = "./imagesProcessing.js";
+            document.head.appendChild(script3);
+
+            var script4 = document.createElement("script");
+            script4.src = "./audioProcessing.js";
+            document.head.appendChild(script4);
+
+            var script5 = document.createElement("script");
+            script5.src = "./textProcessing.js";
+            document.head.appendChild(script5);
+          })
+          .catch((error) => {
+            console.log("Greška prilikom dohvaćanja HTML datoteke:", error);
+          });
+      });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.12.0.min.js"
+    ></script>
+    <script src="navigation.js"></script>
+    <!-- <script src="apiCalls.js"></script>
+    <script src="imagesProcessing.js"></script>
+    <script src="audioProcessing.js"></script>
+    <script src="textProcessing.js"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+  </body>
+</html>
