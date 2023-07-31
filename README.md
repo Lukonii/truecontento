@@ -7,6 +7,11 @@ _Idea behind truecontento was to be a startup with main feature to create short 
 
 ---
 
+![truecontento-home-page](https://github.com/Lukonii/truecontento/assets/39196212/d196149d-45e9-40d5-97f5-4155f8677f63)
+
+
+---
+
 **Front-end stack**
 
 1. javascript
