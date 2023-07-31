@@ -1,0 +1,27 @@
+.auth-input {
+  margin-right: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 25px;
+  padding: 7px 20px 7px 20px;
+  background-color: #e8e8f3;
+  box-shadow: inset 3px 4px 7px #bcbbc2, inset -3px -4px 7px #ffffff;
+}
+#loginTxt span a {
+  text-decoration: none;
+}
+#loginTxt {
+  margin: 0;
+  text-align: left;
+}
+i {
+  padding-top: 5px;
+  cursor: pointer;
+  padding-left: 0px !important;
+}
+.my-alert {
+  color: #760000;
+}
+p {
+  font-size: 1.2rem;
+}

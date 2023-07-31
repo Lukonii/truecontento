@@ -1,0 +1,139 @@
+@font-face {
+  font-family: "Luka Sans Regular";
+  src: url("../fonts/SofiaSans-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Luka Sans Bold";
+  src: url("../fonts/SofiaSans-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inter Bold";
+  src: url("../fonts/Inter-VariableFont_slnt\,wght.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Luka Merriweather BoldItalic";
+  src: url("../fonts/Merriweather-Regular.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Luka Bebas";
+  src: url("../fonts/BebasNeue-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Luka Hina";
+  src: url("../fonts/HinaMincho-Regular.ttf");
+}
+@font-face {
+  font-family: "Luka Mono";
+  src: url("../fonts/SpaceMono-Regular.ttf");
+}
+
+body {
+  font-family: "Luka Sans Regular";
+  background: #e8e8f3;
+  color: #003060;
+  height: 100%;
+  background-image: url("../images/back.jpg");
+  /* ova tri reda treba da budu zakoemntarisana za back, back2*/
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+
+h1,
+h2 {
+  font-family: "Inter Bold";
+  letter-spacing: -0.05em;
+}
+p {
+  color: #464646;
+}
+.background-text {
+  color: transparent;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+
+  background-image: url("../images/word-backgound.jpg");
+  background-size: 120%;
+  animation: bg-animation 10s cubic-bezier(0.3, 0, 0.7, 1) infinite;
+}
+@keyframes bg-animation {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 40% 60%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 60% 40%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+#about,
+#case-studies {
+  background-color: #e8e8f3;
+  color: #010001;
+}
+
+#welcome,
+#features,
+#pricing {
+  border-radius: 6px;
+  padding: 10px 20px 10px 20px;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+#get-started,
+#get-started-try {
+  border-radius: 25px;
+  padding: 10px 20px 10px 20px;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  color: #0061c2;
+  /* color: #304da5; */
+  letter-spacing: 2px;
+}
+
+#text-color-changed {
+  /* background-color: #330867;
+  background-image: linear-gradient(-62deg, #10eea4 0%, #330867 100%); */
+  color: #0061c2;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+  /* background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent; */
+}
+#pricing-box {
+  padding: 40px 40px 30px 40px;
+  cursor: default;
+  background: rgba(247, 249, 252, 0.9);
+  box-shadow: 0 4px 57px rgba(58, 76, 102, 0.07),
+    0 -1.5px 4.5px rgba(191, 197, 202, 0.65) inset;
+  border-radius: 16px;
+}

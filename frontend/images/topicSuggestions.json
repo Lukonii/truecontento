@@ -1,0 +1,208 @@
+{
+  "topics": [
+    {
+      "id": 1,
+      "title": "My favorite book"
+    },
+    {
+      "id": 2,
+      "title": "The importance of sports in the lives of young people"
+    },
+    {
+      "id": 3,
+      "title": "My favorite movie"
+    },
+    {
+      "id": 4,
+      "title": "The significance of friendship"
+    },
+    {
+      "id": 5,
+      "title": "The impact of social media on young people"
+    },
+    {
+      "id": 6,
+      "title": "Advantages and disadvantages of mobile phones"
+    },
+    {
+      "id": 7,
+      "title": "The future of education"
+    },
+    {
+      "id": 8,
+      "title": "How to preserve nature"
+    },
+    {
+      "id": 9,
+      "title": "The influence of media on public opinion"
+    },
+    {
+      "id": 10,
+      "title": "The importance of reading books"
+    },
+    {
+      "id": 11,
+      "title": "The impact of music on emotions"
+    },
+    {
+      "id": 12,
+      "title": "The role of art in society"
+    },
+    {
+      "id": 13,
+      "title": "The benefits of learning a foreign language"
+    },
+    {
+      "id": 14,
+      "title": "The impact of technology on communication"
+    },
+    {
+      "id": 15,
+      "title": "The importance of time management"
+    },
+    {
+      "id": 16,
+      "title": "The influence of advertisements on consumer behavior"
+    },
+    {
+      "id": 17,
+      "title": "The effects of climate change"
+    },
+    {
+      "id": 18,
+      "title": "The significance of cultural diversity"
+    },
+    {
+      "id": 19,
+      "title": "The role of government in society"
+    },
+    {
+      "id": 20,
+      "title": "The impact of globalization"
+    },
+    {
+      "id": 21,
+      "title": "The benefits of volunteering"
+    },
+    {
+      "id": 22,
+      "title": "The challenges of modern parenting"
+    },
+    {
+      "id": 23,
+      "title": "The influence of celebrities on youth"
+    },
+    {
+      "id": 24,
+      "title": "The importance of critical thinking"
+    },
+    {
+      "id": 25,
+      "title": "The role of ethics in business"
+    },
+    {
+      "id": 26,
+      "title": "The impact of social inequality"
+    },
+    {
+      "id": 27,
+      "title": "The benefits of exercise"
+    },
+    {
+      "id": 28,
+      "title": "The significance of cultural heritage"
+    },
+    {
+      "id": 29,
+      "title": "The effects of stress on mental health"
+    },
+    {
+      "id": 30,
+      "title": "The role of media in democracy"
+    },
+    {
+      "id": 31,
+      "title": "The importance of financial literacy"
+    },
+    {
+      "id": 32,
+      "title": "The impact of video games on society"
+    },
+    {
+      "id": 32,
+      "title": "The benefits of meditation"
+    },
+    {
+      "id": 33,
+      "title": "The influence of fashion on culture"
+    },
+    {
+      "id": 34,
+      "title": "The importance of renewable energy"
+    },
+    {
+      "id": 35,
+      "title": "The role of social media in activism"
+    },
+    {
+      "id": 36,
+      "title": "The effects of population growth"
+    },
+    {
+      "id": 37,
+      "title": "The significance of emotional intelligence"
+    },
+    {
+      "id": 38,
+      "title": "The impact of artificial intelligence"
+    },
+    {
+      "id": 39,
+      "title": "The benefits of a healthy lifestyle"
+    },
+    {
+      "id": 40,
+      "title": "The role of education in reducing poverty"
+    },
+    {
+      "id": 41,
+      "title": "The influence of social norms on behavior"
+    },
+    {
+      "id": 42,
+      "title": "The importance of cultural education"
+    },
+    {
+      "id": 43,
+      "title": "The effects of urbanization"
+    },
+    {
+      "id": 44,
+      "title": "The significance of family in personal development"
+    },
+    {
+      "id": 45,
+      "title": "The impact of consumerism on society"
+    },
+    {
+      "id": 46,
+      "title": "The benefits of lifelong learning"
+    },
+    {
+      "id": 47,
+      "title": "The role of media in shaping public opinion"
+    },
+    {
+      "id": 48,
+      "title": "The importance of empathy in relationships"
+    },
+    {
+      "id": 49,
+      "title": "The effects of deforestation"
+    },
+    {
+      "id": 50,
+      "title": "The significance of historical preservation"
+    }
+  ]
+}
